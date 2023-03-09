@@ -81,7 +81,7 @@ window.addEventListener("click", function() {
   } else {
     if (!gamestart) {
       incscore = true
-      speed = 90
+      speed = 30
       gamestart = true
       state.innerHTML = ''
     }
@@ -106,7 +106,8 @@ function main(currentTime) {
   spike1.style.left = `${s1}%`
   spike2.style.left = `${s2}%`
   spike3.style.left = `${s3}%`
-  if (t >= 0 && t < 0.4) {
+  if (window.innerWidth>=500) {
+     if (t >= 0 && t < 0.4) {
     s1 -= 1.1
     s2 -= 1.1
     s3 -= 1.1
@@ -143,6 +144,46 @@ function main(currentTime) {
   }
 
 
+
+  }
+  else {
+  if (t >= 0 && t < 0.4) {
+    s1 -= 2.5
+    s2 -= 2.5
+    s3 -= 2.5
+  }
+  else if (t >= 0.4 && t < 0.9) {
+    s1 -= 2.9
+    s2 -= 2.9
+    s3 -= 2.9
+  }
+  else if (t >= 0.9 && t < 1.4) {
+    s1 -= 3.3
+    s2 -= 3.3
+    s3 -= 3.3
+  }
+  else if (t >= 1.4 && t < 2) {
+    s1 -= 3.8
+    s2 -= 3.8
+    s3 -= 3.8
+  }
+  else if (t >= 2 && t < 2.8) {
+    s1 -= 4.2
+    s2 -= 4.2
+    s3 -= 4.2
+  }
+  else if (t >= 2.8 && t < 3.5) {
+    s1 -= 4.7
+    s2 -= 4.7
+    s3 -= 4.7
+  }
+  else if (t >= 3.5) {
+    s1 -= 5
+    s2 -= 5
+    s3 -= 5
+  }
+
+}
 
 
   if (s1 <= -15) {
@@ -224,7 +265,7 @@ state.addEventListener("click", function() {
       speed = 60
     }
     else {
-      speed = 90
+      speed = 30
     }
   }
 })
